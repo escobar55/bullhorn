@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1> Messages </h1>
+  <a href="/add"> Add a Message </a><br />
+  <div th:each="message : ${messages}">
+      <h4 th:inline="text"> [[${message.content}]] By [[${message.sentBy}]]</h4>
+      <p th:text="${message.postedDate}"> </p>
+  </div>
+
+
+</body>
+</html>

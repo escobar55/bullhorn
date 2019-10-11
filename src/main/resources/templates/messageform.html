@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Add a new Message!</h1>
+    <form action="#" th:action="@{process}" th:object="${message}" method="post">
+        Message: <textarea rows="3" th:field="*{content}" />
+        <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"> </span> <br />
+        Sent By: <input type="text" th:field="*{sentBy}" />
+        <span th:if="${#fields.hasErrors('sentBy')}" th:errors="*{sentBy}"> </span> <br />
+        Date: <input type="text" th:field="*{postedDate}" />
+        <span th:if="${#fields.hasErrors('postedDate')}" th:errors="*{postedDate}"> </span> <br />
+        <br />
+        <input type="submit" value="Submit" />
+
+    </form>
+
+</body>
+</html>

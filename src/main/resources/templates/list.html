@@ -16,6 +16,9 @@
   <h1> Messages </h1>
   <a href="/add"> Add a Message </a><br /><br/><br/>
   <div th:each="message : ${messages}">
+      <div th:if="${message.headshot} != null">
+          <img th:src="${message.headshot}" /> <hr />
+      </div>
       <h4 th:inline="text"> [[${message.content}]] By [[${message.sentBy}]]</h4>
       <p th:text="${message.postedDate}"> </p>
   </div>
